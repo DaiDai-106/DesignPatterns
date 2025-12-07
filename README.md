@@ -46,6 +46,7 @@
 | :--- | :--- | :--- |
 | **适配器模式 (Adapter)** | 将一个类的接口转换成客户端所期望的另一个接口。适配器模式让原本由于接口不兼容而不能一起工作的那些类可以一起工作。 | [查看文档](./include/structural/adapter/adapter.md) |
 | **桥接模式 (Bridge)** | 将抽象部分与实现部分分离，使它们可以独立变化。 | [查看文档](./include/structural/bridge/bridge.md) |
+| **组合模式 (Composite)** | 将对象组合成树形结构以表示"部分-整体"的层次结构。 | [查看文档](./include/structural/composite/composite.md) |
 ---
 
 *持续更新中...*

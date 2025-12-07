@@ -42,6 +42,7 @@ if(RUN_STRUCTURAL)
     list(APPEND TEST_SOURCES
         ${CMAKE_CURRENT_SOURCE_DIR}/test/structural/adapter.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/test/structural/bridge.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/test/structural/composite.cpp
     )
 endif()
 

@@ -4,4 +4,7 @@ target_include_directories(adapter PUBLIC ${CMAKE_SOURCE_DIR}/include)
 add_library(bridge SHARED bridge/bridge.cpp)
 target_include_directories(bridge PUBLIC ${CMAKE_SOURCE_DIR}/include)
 
-set(STRUCTURAL_LIBRARIES adapter bridge PARENT_SCOPE)
+add_library(composite SHARED composite/composite.cpp)
+target_include_directories(composite PUBLIC ${CMAKE_SOURCE_DIR}/include)
+
+set(STRUCTURAL_LIBRARIES adapter bridge composite PARENT_SCOPE)
