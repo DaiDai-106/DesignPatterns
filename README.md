@@ -38,6 +38,6 @@
 | **建造者模式 (Builder)** |  将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。| [查看文档](./include/creational/builder/builder.md) |
 | **工厂模式 (Factory)** | 定义一个创建对象的接口，让其子类自己决定实例化哪一个工厂类。囊括了简单工厂、工厂方法及抽象工厂。 | [查看文档](./include/creational/factory/factory.md) |
 | **原型模式 (Prototype)** | 用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。 | [查看文档](./include/creational/prototype/prototype.md) |
-
+| **单例模式 (Singleton)** | 确保一个类只有一个实例，并提供一个全局访问点。同时保证线程安全。 | [查看文档](./include/creational/singleton/singleton.md) |
 ---
 *持续更新中...*

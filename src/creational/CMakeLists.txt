@@ -7,4 +7,8 @@ target_include_directories(factory PUBLIC ${CMAKE_SOURCE_DIR}/include)
 add_library(prototype SHARED prototype/prototype.cpp)
 target_include_directories(prototype PUBLIC ${CMAKE_SOURCE_DIR}/include)
 
-set(CREATIONAL_LIBRARIES builder factory prototype PARENT_SCOPE)
+add_library(singleton SHARED singleton/singleton.cpp)
+target_include_directories(singleton PUBLIC ${CMAKE_SOURCE_DIR}/include)
+
+set(CREATIONAL_LIBRARIES builder factory prototype singleton PARENT_SCOPE)
+    
