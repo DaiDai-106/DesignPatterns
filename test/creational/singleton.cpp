@@ -21,7 +21,7 @@ void worker_thread( int id )
   db.execute_query( "SELECT * FROM users WHERE id=" + std::to_string( id ) );
 }
 
-int main()
+int test_singleton()
 {
   std::cout << "--- Singleton Test Start ---" << std::endl;
 

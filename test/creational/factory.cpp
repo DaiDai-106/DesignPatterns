@@ -2,7 +2,7 @@
 #include "creational/factory/abstract_factory.h"
 #include <iostream>
 
-int main()
+int test_factory()
 {
   auto wall = DesignPatterns::Factory::WallFactory::create_partition();
   wall->draw();

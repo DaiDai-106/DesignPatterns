@@ -1,6 +1,6 @@
 #include "creational/prototype/prototype.h"
 
-int main()
+int test_prototype()
 {
   DesignPatterns::Factory::Address *a = new DesignPatterns::Factory::ExtendedAddress( "Suite 456" );
   a->show();

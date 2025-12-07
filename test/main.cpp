@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+
+// 声明各个测试文件的入口函数
+// 这样链接器就能找到它们，无需头文件
+int test_builder();
+int test_factory();
+int test_prototype();
+int test_singleton();
+int test_adapter();
+int test_bridge();
+
+int main( int argc, char *argv[] )
+{
+  if ( argc < 2 ) {
+    std::cout << "Usage: " << argv[ 0 ] << " <test_name>" << std::endl;
+    std::cout << "Available tests:\n"
+              << "  builder\n"
+              << "  factory\n"
+              << "  prototype\n"
+              << "  singleton\n"
+              << "  adapter\n"
+              << "  bridge" << std::endl;
+    return 1;
+  }
+
+  std::string test_name = argv[ 1 ];
+  std::cout << "Running test: " << test_name << "...\n" << std::endl;
+
+  if ( test_name == "builder" ) { return test_builder(); }
+  if ( test_name == "factory" ) { return test_factory(); }
+  if ( test_name == "prototype" ) { return test_prototype(); }
+  if ( test_name == "singleton" ) { return test_singleton(); }
+  if ( test_name == "adapter" ) { return test_adapter(); }
+  if ( test_name == "bridge" ) { return test_bridge(); }
+
+  std::cerr << "Error: Unknown test '" << test_name << "'" << std::endl;
+  return 1;
+}

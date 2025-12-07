@@ -14,7 +14,7 @@ void client_expects_round_peg( DesignPatterns::Adapter::RoundPeg &peg )
   peg.insert_into_hole( 10 );
 }
 
-int main()
+int test_adapter()
 {
   std::cout << "\n=== 1. Two-Way Adapter Test ===" << std::endl;
   // PegAdapter 同时实现了 SquarePeg 和 RoundPeg 接口

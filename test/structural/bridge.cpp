@@ -2,7 +2,7 @@
 #include <iostream>
 #include <memory>
 
-int main()
+int test_bridge()
 {
   using namespace DesignPatterns::Bridge;
   std::cout << "=== Bridge Pattern Test ===\n" << std::endl;

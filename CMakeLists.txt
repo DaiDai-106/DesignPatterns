@@ -20,30 +20,36 @@ message(STATUS "-DRUN_STRUCTURAL=${RUN_STRUCTURAL}")
 message(STATUS "========== ${PROJECT_NAME} Build Information ==========")
 
 set(CREATIONAL_LIBRARIES)
-set(STRUCTURAL_LIBRARIES)
+set(STRUCTURAL_LIBRARIES) # Initialize STRUCTURAL_LIBRARIES as well
+set(TEST_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/test/main.cpp)
 
 if(RUN_CREATIONAL)
     add_subdirectory( ${CMAKE_SOURCE_DIR}/src/creational)
     
-    add_executable(test_builder ${CMAKE_CURRENT_SOURCE_DIR}/test/creational/builder.cpp)
-    target_link_libraries(test_builder PRIVATE ${CREATIONAL_LIBRARIES})
-
-    add_executable(test_factory ${CMAKE_CURRENT_SOURCE_DIR}/test/creational/factory.cpp)
-    target_link_libraries(test_factory PRIVATE ${CREATIONAL_LIBRARIES})
-
-    add_executable(test_prototype ${CMAKE_CURRENT_SOURCE_DIR}/test/creational/prototype.cpp)
-    target_link_libraries(test_prototype PRIVATE ${CREATIONAL_LIBRARIES})
-
-    add_executable(test_singleton ${CMAKE_CURRENT_SOURCE_DIR}/test/creational/singleton.cpp)
-    target_link_libraries(test_singleton PRIVATE ${CREATIONAL_LIBRARIES})
+    # 收集 Creational 相关的测试源文件
+    list(APPEND TEST_SOURCES 
+        ${CMAKE_CURRENT_SOURCE_DIR}/test/creational/builder.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/test/creational/factory.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/test/creational/prototype.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/test/creational/singleton.cpp
+    )
 endif()
 
 if(RUN_STRUCTURAL)
     add_subdirectory( ${CMAKE_SOURCE_DIR}/src/structural)
-    
-    add_executable(test_adapter ${CMAKE_CURRENT_SOURCE_DIR}/test/structural/adapter.cpp)
-    target_link_libraries(test_adapter PRIVATE ${STRUCTURAL_LIBRARIES})
 
-    add_executable(test_bridge ${CMAKE_CURRENT_SOURCE_DIR}/test/structural/bridge.cpp)
-    target_link_libraries(test_bridge PRIVATE ${STRUCTURAL_LIBRARIES})
+    # 收集 Structural 相关的测试源文件
+    list(APPEND TEST_SOURCES
+        ${CMAKE_CURRENT_SOURCE_DIR}/test/structural/adapter.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/test/structural/bridge.cpp
+    )
 endif()
+
+# 统一生成一个测试可执行文件
+add_executable(design_patterns_test ${TEST_SOURCES})
+
+# 链接所有相关库
+target_link_libraries(design_patterns_test PRIVATE 
+    ${CREATIONAL_LIBRARIES}
+    ${STRUCTURAL_LIBRARIES}
+)

@@ -1,7 +1,6 @@
 #include "creational/builder/combine_builder.h"
 #include <iostream>
-
-int main()
+int test_builder()
 {
   DesignPatterns::Builder::Person p = DesignPatterns::Builder::Person::Create()
                                           .lives()
@@ -10,7 +9,7 @@ int main()
                                           .in( "London" )
                                           .works()
                                           .at( "PragmaSoft" )
-                                          .earning( 100.32 );
+                                          .earning( 10e5 );
 
   std::cout << p << std::endl;
   return 0;
