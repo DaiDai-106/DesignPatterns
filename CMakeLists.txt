@@ -26,5 +26,8 @@ if(RUN_CREATIONAL)
 
     add_executable(test_factory ${CMAKE_CURRENT_SOURCE_DIR}/test/creational/factory.cpp)
     target_link_libraries(test_factory PRIVATE ${CREATIONAL_LIBRARIES})
+
+    add_executable(test_prototype ${CMAKE_CURRENT_SOURCE_DIR}/test/creational/prototype.cpp)
+    target_link_libraries(test_prototype PRIVATE ${CREATIONAL_LIBRARIES})
 endif()
 
