@@ -56,22 +56,34 @@ int main() {
 
 ```mermaid
 graph TD
-    Start["我想复用现有的类 A 吗?"] -->|No| NoAdapter["不需要适配器"]
-    Start -->|Yes| CheckInterface["A 的接口符合当前系统的期望吗?"]
+    Start["我想复用现有的类 A 吗?"]
+    NoAdapter["不需要适配器"]
+    CheckInterface["A 的接口符合当前系统的期望吗?"]
+    DirectUse["直接使用 A"]
+    CanModify["我能修改 A 的源码吗?"]
+    Modify["直接修改 A (重构)"]
+    CheckGoal["是否只需要转换接口而不改变行为?"]
+    Adapter["✅ 适配器模式"]
+    CheckFunction["具体需求是什么?"]
+    Decorator["装饰器模式"]
+    Proxy["代理模式"]
+    Bridge["桥接模式"]
 
-    CheckInterface -->|Yes| DirectUse["直接使用 A"]
-    CheckInterface -->|No| CanModify["我能修改 A 的源码吗?"]
+    Start -->|No| NoAdapter
+    Start -->|Yes| CheckInterface
 
-    CanModify -->|"Yes & Should"| Modify["直接修改 A (重构)"]
-    CanModify -->|"No / Shouldn't"| CheckGoal["是否只需要转换接口而不改变行为?"]
+    CheckInterface -->|Yes| DirectUse
+    CheckInterface -->|No| CanModify
 
-    CheckGoal -->|Yes| Adapter["✅ 适配器模式"]
-    CheckGoal -->|No| CheckFunction["具体需求是什么?"]
+    CanModify -->|"Yes & Should"| Modify
+    CanModify -->|"No / Shouldn't"| CheckGoal
 
-    CheckFunction -->|增加功能| Decorator["装饰器模式"]
-    CheckFunction -->|控制访问| Proxy["代理模式"]
-    CheckFunction -->|结构重塑| Bridge["桥接模式"]
+    CheckGoal -->|Yes| Adapter
+    CheckGoal -->|No| CheckFunction
 
+    CheckFunction -->|增加功能| Decorator
+    CheckFunction -->|控制访问| Proxy
+    CheckFunction -->|结构重塑| Bridge
 ```
 
 当然一般在接入第三方库，老旧接口迁移时会尝试使用该设计模式。
