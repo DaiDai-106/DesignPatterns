@@ -47,6 +47,8 @@
 | **适配器模式 (Adapter)** | 将一个类的接口转换成客户端所期望的另一个接口。适配器模式让原本由于接口不兼容而不能一起工作的那些类可以一起工作。 | [查看文档](./include/structural/adapter/adapter.md) |
 | **桥接模式 (Bridge)** | 将抽象部分与实现部分分离，使它们可以独立变化。 | [查看文档](./include/structural/bridge/bridge.md) |
 | **组合模式 (Composite)** | 将对象组合成树形结构以表示"部分-整体"的层次结构。 | [查看文档](./include/structural/composite/composite.md) |
+| **装饰器模式 (Decorator)** | 动态地给一个对象添加一些额外的职责。就增加功能来说，装饰器模式比生成子类更为灵活。 | [查看文档](./include/structural/decorator/decorator.md) |
+| **外观模式 (Facade)** | 为子系统中的一组接口提供一个一致的界面。外观模式定义了一个高层接口，使得子系统更易使用。 | [查看文档](./include/structural/facade/facade.md) |
 ---
 
 *持续更新中...*
