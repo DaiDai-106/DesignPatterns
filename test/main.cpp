@@ -10,6 +10,7 @@ int test_singleton();
 int test_adapter();
 int test_bridge();
 int test_composite();
+int test_facade();
 
 int main( int argc, char *argv[] )
 {
@@ -22,7 +23,8 @@ int main( int argc, char *argv[] )
               << "  singleton\n"
               << "  adapter\n"
               << "  bridge\n"
-              << "  composite" << std::endl;
+              << "  composite\n"
+              << "  facade" << std::endl;
     return 1;
   }
 
@@ -36,6 +38,7 @@ int main( int argc, char *argv[] )
   if ( test_name == "adapter" ) { return test_adapter(); }
   if ( test_name == "bridge" ) { return test_bridge(); }
   if ( test_name == "composite" ) { return test_composite(); }
+  if ( test_name == "facade" ) { return test_facade(); }
 
   std::cerr << "Error: Unknown test '" << test_name << "'" << std::endl;
   return 1;
