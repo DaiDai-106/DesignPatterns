@@ -11,6 +11,8 @@ int test_adapter();
 int test_bridge();
 int test_composite();
 int test_facade();
+int test_flyweight();
+int test_proxy();
 
 int main( int argc, char *argv[] )
 {
@@ -24,7 +26,9 @@ int main( int argc, char *argv[] )
               << "  adapter\n"
               << "  bridge\n"
               << "  composite\n"
-              << "  facade" << std::endl;
+              << "  facade\n"
+              << "  flyweight\n"
+              << "  proxy" << std::endl;
     return 1;
   }
 
@@ -39,6 +43,8 @@ int main( int argc, char *argv[] )
   if ( test_name == "bridge" ) { return test_bridge(); }
   if ( test_name == "composite" ) { return test_composite(); }
   if ( test_name == "facade" ) { return test_facade(); }
+  if ( test_name == "flyweight" ) { return test_flyweight(); }
+  if ( test_name == "proxy" ) { return test_proxy(); }
 
   std::cerr << "Error: Unknown test '" << test_name << "'" << std::endl;
   return 1;

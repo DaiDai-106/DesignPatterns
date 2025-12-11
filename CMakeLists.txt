@@ -44,6 +44,8 @@ if(RUN_STRUCTURAL)
         ${CMAKE_CURRENT_SOURCE_DIR}/test/structural/bridge.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/test/structural/composite.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/test/structural/facade.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/test/structural/flyweight.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/test/structural/proxy.cpp
     )
 endif()
 
