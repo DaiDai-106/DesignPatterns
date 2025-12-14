@@ -9,7 +9,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 option(SHARED_LIB "Build shared library or not. Otherwise, build static instead." ON)
 option(RUN_CREATIONAL "Run creational design pattern code examples." ON)
 option(RUN_STRUCTURAL "Run structural design pattern code examples." ON)
-
+option(RUN_BEHAVIORAL "Run behavioral design pattern code examples." ON)
 
 message(STATUS "========== ${PROJECT_NAME} Build Information ==========")
 message(STATUS "Current build options:")
@@ -20,7 +20,9 @@ message(STATUS "-DRUN_STRUCTURAL=${RUN_STRUCTURAL}")
 message(STATUS "========== ${PROJECT_NAME} Build Information ==========")
 
 set(CREATIONAL_LIBRARIES)
-set(STRUCTURAL_LIBRARIES) # Initialize STRUCTURAL_LIBRARIES as well
+set(STRUCTURAL_LIBRARIES) 
+set(BEHAVIORAL_LIBRARIES)
+
 set(TEST_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/test/main.cpp)
 
 if(RUN_CREATIONAL)
@@ -49,6 +51,16 @@ if(RUN_STRUCTURAL)
     )
 endif()
 
+if(RUN_BEHAVIORAL)
+    add_subdirectory( ${CMAKE_SOURCE_DIR}/src/behavioral)
+
+    # 收集 Behavioral 相关的测试源文件
+    list(APPEND TEST_SOURCES
+        ${CMAKE_CURRENT_SOURCE_DIR}/test/behavioral/responsibility_chain.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/test/behavioral/comand.cpp
+    )
+endif()
+
 # 统一生成一个测试可执行文件
 add_executable(design_patterns_test ${TEST_SOURCES})
 
@@ -56,4 +68,5 @@ add_executable(design_patterns_test ${TEST_SOURCES})
 target_link_libraries(design_patterns_test PRIVATE 
     ${CREATIONAL_LIBRARIES}
     ${STRUCTURAL_LIBRARIES}
+    ${BEHAVIORAL_LIBRARIES}
 )

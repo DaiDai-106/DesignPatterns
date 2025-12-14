@@ -13,6 +13,8 @@ int test_composite();
 int test_facade();
 int test_flyweight();
 int test_proxy();
+int test_responsibility_chain();
+int test_command();
 
 int main( int argc, char *argv[] )
 {
@@ -28,7 +30,9 @@ int main( int argc, char *argv[] )
               << "  composite\n"
               << "  facade\n"
               << "  flyweight\n"
-              << "  proxy" << std::endl;
+              << "  proxy\n"
+              << "  responsibility_chain\n"
+              << "  command" << std::endl;
     return 1;
   }
 
@@ -45,6 +49,8 @@ int main( int argc, char *argv[] )
   if ( test_name == "facade" ) { return test_facade(); }
   if ( test_name == "flyweight" ) { return test_flyweight(); }
   if ( test_name == "proxy" ) { return test_proxy(); }
+  if ( test_name == "responsibility_chain" ) { return test_responsibility_chain(); }
+  if ( test_name == "command" ) { return test_command(); }
 
   std::cerr << "Error: Unknown test '" << test_name << "'" << std::endl;
   return 1;

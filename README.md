@@ -55,4 +55,9 @@
 
 ---
 
-*持续更新中...*
+### 行为型设计模式 (Behavioral Patterns)
+
+| 模式名称 | 描述 | 文档与代码 |
+| :--- | :--- | :--- |
+| **责任链模式 (Chain of Responsibility)** | 使多个对象都有机会处理请求，从而避免请求的发送者和接收者之间的耦合关系。将这些对象连成一条链，并沿着这条链传递该请求，直到有一个对象处理它为止。 | [查看文档](./include/behavioral/responsibility_chain/responsibility_chain.md) |
+| **命令模式 (Command)** | 将一个请求封装为一个对象，从而使你可用不同的请求对客户进行参数化。。 | [查看文档](./include/behavioral/command/command.md) |
